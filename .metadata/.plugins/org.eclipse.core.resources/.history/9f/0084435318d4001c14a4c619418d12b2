@@ -1,0 +1,10 @@
+
+public class RiddleApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Drawers hundred = new Drawers(5);
+		System.out.println(hundred.toString());
+	}
+
+}

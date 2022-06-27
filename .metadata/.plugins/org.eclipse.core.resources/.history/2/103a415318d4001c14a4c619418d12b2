@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Random;
+import java.util.TreeMap;
+
+public class Drawers {
+	private int numberOfDrawers;
+	private Map<Integer, Integer> drawerMap = new TreeMap();
+	
+	public Drawers(int numberOfDrawers) {
+		setNumberOfDrawers(numberOfDrawers);
+		ArrayList<Integer> numbers = new ArrayList<>();
+		for (int i = 1; i <= numberOfDrawers; i++) {
+			numbers.add(i);
+		}
+		for (int j = 1; j <= numberOfDrawers; j++) {
+			int entryPull = generateRandomDieRoll(numbers.size());
+			drawerMap.put(j, numbers.get(entryPull));
+			numbers.remove(entryPull);
+		}
+	}
+	
+	//methods
+	@Override
+	public String toString() {
+		String result = "";
+		for (int i = 1; i <= numberOfDrawers; i++) {
+			result += "\nDrawer " + i + ": " + drawerMap.get(i);
+		}
+		return result;
+	}
+	//rolls an N sided die
+	public static int generateRandomDieRoll(int sides) {
+		Random rand = new Random();
+		int randomRoll = 1 + Math.abs(rand.nextInt() % sides);
+		return randomRoll;
+	}
+	
+	//getters/setters
+	public int getNumberOfDrawers() {
+		return numberOfDrawers;
+	}
+	public void setNumberOfDrawers(int numberOfDrawers) {
+		this.numberOfDrawers = numberOfDrawers;
+	}
+	public Map<Integer, Integer> getDrawerNumbers() {
+		return drawerMap;
+	}
+}

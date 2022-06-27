@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+
+//each prisoner gets his own instance of this class. The object records his guesses and cycles through them
+public class FirstFifty {
+	
+	
+	//instance variables
+//	private int firstGuess;
+	private int lastGuess;
+//	private int maxGuesses;
+	private ArrayList<Integer> recordedGuesses;
+	
+	//constructors
+	public FirstFifty(Drawers drawers) {
+		
+	}
+	
+	//methods
+	//
+	public boolean searchDrawers(Drawers drawers, int prisonerID) {
+		for (int i = 1; i <= drawers.getNumberOfDrawers(); i++) {
+			if (drawers.getDrawerNumbers().get(i) == prisonerID) {
+				return true;
+			} else {
+				return searchDrawers();
+			}
+		}
+	}
+	
+	//getters and setters
+	public int getLastGuess() {
+		return lastGuess;
+	}
+	public void setLastGuess(int lastGuess) {
+		this.lastGuess = lastGuess;
+	}
+	public ArrayList<Integer> getAllGuesses() {
+		return recordedGuesses;
+	}
+	public void setAllGuesses(ArrayList<Integer> allGuesses) {
+		this.recordedGuesses = allGuesses;
+	}
+}

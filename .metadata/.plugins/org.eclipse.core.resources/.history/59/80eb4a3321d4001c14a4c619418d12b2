@@ -1,0 +1,17 @@
+
+public class FirstFifty {
+	//instance variables
+	private int lastGuess;
+	
+	//constructors
+	
+	//methods
+	
+	//getters and setters
+	public int getLastGuess() {
+		return lastGuess;
+	}
+	public void setLastGuess(int lastGuess) {
+		this.lastGuess = lastGuess;
+	}
+}

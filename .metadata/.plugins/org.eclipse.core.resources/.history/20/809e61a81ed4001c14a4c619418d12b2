@@ -1,0 +1,23 @@
+
+public class Prisoners {
+	private int numberOfPrisoners;
+	
+	
+	//constructors
+	Prisoners(int numberOfDrawers) {
+		setNumberOfPrisoners(numberOfDrawers);
+	}
+	
+	//drawer methods
+	public void firstFifty() {
+		
+	}
+	
+	//getters/setters
+	public int getNumberOfPrisoners() {
+		return numberOfPrisoners;
+	}
+	public void setNumberOfPrisoners(int numberOfPrisoners) {
+		this.numberOfPrisoners = numberOfPrisoners;
+	}
+}

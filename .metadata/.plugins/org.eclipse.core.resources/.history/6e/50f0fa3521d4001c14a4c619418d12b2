@@ -1,0 +1,14 @@
+
+import java.util.Map;
+
+public class RiddleApp {
+
+	public static void main(String[] args) {
+		Drawers hundred = new Drawers(20);
+		System.out.println(hundred.toString());
+	}
+	
+	public static void findPrisonerLoops(Map<Integer, Integer> drawerMap) {
+		
+	}
+}

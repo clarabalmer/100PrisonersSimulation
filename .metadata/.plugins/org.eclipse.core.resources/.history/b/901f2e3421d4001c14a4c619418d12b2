@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class Prisoners {
+	private int numberOfPrisoners;
+	private ArrayList<Integer> aliveOrDead = new ArrayList<>(); //-1 = null ish, 0 = dead, 1 = alive
+	
+	
+	//constructors
+	Prisoners(int numberOfDrawers) {
+		setNumberOfPrisoners(numberOfDrawers);
+		for (int i = 0; i < numberOfPrisoners; i++) {
+			aliveOrDead.add(-1);
+		}
+	}
+	
+	
+	
+	
+	//getters/setters
+	public int getNumberOfPrisoners() {
+		return numberOfPrisoners;
+	}
+	public void setNumberOfPrisoners(int numberOfPrisoners) {
+		this.numberOfPrisoners = numberOfPrisoners;
+	}
+	public ArrayList<Integer> getAliveOrDead() {
+		return aliveOrDead;
+	}
+	public void setAliveOrDead(ArrayList<Integer> aliveOrDead) {
+		this.aliveOrDead = aliveOrDead;
+	}
+}

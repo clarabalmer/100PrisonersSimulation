@@ -1,28 +1,44 @@
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
-//Prisoners class makes a set of prisoners and a list of their statuses:
-//-1 if they haven't searched the drawers yet, 0 if searched the drawers and died, 1 if searched the drawers and lived.
+//Prisoners class makes a map of prisoners and a list of their statuses: waiting, alive, dead
 public class Prisoners {
 	private int numberOfPrisoners;
-	private ArrayList<Integer> aliveOrDead = new ArrayList<>(); //-1 = null (ish), 0 = dead, 1 = alive
+	private Map<Integer, String> aliveOrDeadMap = new TreeMap<>();
+	
 	
 	
 	//constructors
-	Prisoners() {}
-	//sets all prisoners aliveOrDead as -1 (unsure)
-	Prisoners(int numberOfDrawers) {
-		setNumberOfPrisoners(numberOfDrawers);
-		for (int i = 0; i < numberOfPrisoners; i++) {
-			aliveOrDead.add(-1);
+	Prisoners(int numberOfPrisoners) {
+		setNumberOfPrisoners(numberOfPrisoners);
+		for (int i = 1; i <= numberOfPrisoners; i++) {
+			aliveOrDeadMap.put(i, "waiting");
 		}
 	}
-	
-	public String aliveResults() {
+	public void setOnePrisoner(int prisonerID, String status) {
+		aliveOrDeadMap.replace(prisonerID, status);
+	}
+	public String aliveResultsLong() {
 		String result = "";
-		for (int i = 0; i < aliveOrDead.size(); i++) {
-			result += "\nPrisoner " + (i + 1) + ": " + aliveOrDead.get(i);
+		for (int i = 1; i <= numberOfPrisoners; i++) {
+			result += "\nPrisoner " + i + ": " + aliveOrDeadMap.get(i);
 		}
 		return result;
+	}
+	public String aliveResultsTotals() {
+		int waitingCount = 0;
+		int aliveCount = 0;
+		int deadCount = 0;
+		for (int i = 1; i <= numberOfPrisoners; i++) {
+			if (aliveOrDeadMap.get(i).equalsIgnoreCase("waiting")) {
+				waitingCount++;
+			} else if (aliveOrDeadMap.get(i).equalsIgnoreCase("alive")) {
+				aliveCount++;
+			} else {
+				deadCount++;
+			}
+		}
+		return "Alive: " + aliveCount + ". Dead: " + deadCount + ". Waiting: " + waitingCount + ".";
 	}
 	
 	
@@ -33,10 +49,10 @@ public class Prisoners {
 	public void setNumberOfPrisoners(int numberOfPrisoners) {
 		this.numberOfPrisoners = numberOfPrisoners;
 	}
-	public ArrayList<Integer> getAliveOrDead() {
-		return aliveOrDead;
+	public Map<Integer, String> getAliveOrDeadMap() {
+		return aliveOrDeadMap;
 	}
-	public void setAliveOrDead(ArrayList<Integer> aliveOrDead) {
-		this.aliveOrDead = aliveOrDead;
+	public void setAliveOrDeadMap(Map<Integer, String> aliveOrDeadMap) {
+		this.aliveOrDeadMap = aliveOrDeadMap;
 	}
 }

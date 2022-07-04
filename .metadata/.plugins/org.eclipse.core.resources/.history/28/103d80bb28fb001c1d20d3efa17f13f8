@@ -1,0 +1,11 @@
+
+public abstract class Strategy {
+	private RiddleScenario riddle;
+
+	Strategy(RiddleScenario riddle) {
+		this.riddle = riddle;
+	}
+	
+	abstract void searchDrawers();
+	
+}

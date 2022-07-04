@@ -1,0 +1,15 @@
+
+public abstract class Strategy {
+	protected RiddleTrials trials;
+
+	//runs 
+	Strategy(RiddleScenario riddle) {
+		trials = new RiddleTrials(riddle, 1);
+	}
+	Strategy(RiddleTrials trials) {
+		this.trials = trials;
+	}
+	
+	abstract void runTrials();
+	
+}

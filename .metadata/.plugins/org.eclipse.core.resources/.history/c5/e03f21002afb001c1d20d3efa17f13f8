@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+public class RiddleTest {
+	private ArrayList<RiddleScenario> trials;
+	private int numOfTrials;
+	private Strategy strategy;
+	
+	RiddleTest(RiddleScenario riddleScen, int numOfTrials, Strategy strategy) {
+		for (int i = 1; i <= numOfTrials; i++) {
+			trials.add(riddleScen);
+		}
+		this.strategy = strategy;
+	}
+	
+	
+	public void runTest() {
+		for (int i = 1; i <= numOfTrials; i++) {
+			strategy.searchDrawers();
+			
+		}
+		
+	}
+	public void displayResults() {
+		
+	}
+}

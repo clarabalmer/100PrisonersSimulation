@@ -1,0 +1,10 @@
+
+public class RiddleTest {
+	private RiddleScenario riddleScen;
+	private int numOfTrials;
+	private Strategy strategy;
+	
+	RiddleTest(RiddleScenario riddleScen, int numOfTrials, Strategy strategy) {
+		
+	}
+}

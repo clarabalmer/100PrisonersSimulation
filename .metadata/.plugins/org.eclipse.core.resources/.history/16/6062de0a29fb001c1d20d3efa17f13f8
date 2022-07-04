@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class RiddleTrials {
+	private ArrayList<RiddleScenario> trialList;
+	private int numOfTrials;
+	private Strategy strategy;
+	
+	RiddleTrials(RiddleScenario riddleScenario, int numOfTrials) {
+		for (int i = 1; i <= numOfTrials; i++) {
+			trials.add(riddleScenario);
+		}
+	}
+	
+	public void runTrials() {
+		for (int i = 1; i <= numOfTrials; i++) {
+			strategy.searchDrawers();
+			
+		}
+		
+	}
+	public void displayTrialResults() {
+		
+	}
+}

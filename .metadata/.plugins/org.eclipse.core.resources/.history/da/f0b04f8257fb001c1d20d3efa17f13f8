@@ -1,0 +1,44 @@
+
+public class FirstHalf extends Strategy {
+	
+	
+	
+	FirstHalf(RiddleScenario riddle) {
+		super(riddle);
+	}
+	FirstHalf(RiddleTrials trials) {
+		super(trials);
+	}
+
+	@Override
+	public void runTrials() {
+		for (int i = 1; i <= trials.getNumOfTrials(); i++) {
+			for (int j = 1; j <= trials.getTrialList().get(i).getNumberOfPrisoners(); j++) {
+				for (int k = 1; k <= trials.getTrialList().get(i).getMaxGuesses(); k++) {
+					if (trials.getTrialList().get(i).getDrawers().getDrawerNumbers().get(k) == j) {
+						trials.getTrialList().get(i).getPrisoners().setOnePrisoner(i, "alive");
+						break;
+					}
+				}
+				if (trials.getTrialList().get(i).getPrisoners().getAliveOrDeadMap().get(j).equals("waiting")) {
+					trials.getTrialList().get(i).getPrisoners().setOnePrisoner(i, "dead");
+				}
+			}
+		}
+		
+		
+//		for (int i = 1; i <= trials.getTrialList().get(i).getNumberOfPrisoners(); i++) {
+//			for (int j = 1; j <= trials.getTrialList().get(i).getMaxGuesses(); j++) {
+//				if (trials.getTrialList().get(i).getDrawers().getDrawerNumbers().get(j) == i) {
+//					trials.getTrialList().get(i).getPrisoners().setOnePrisoner(i, "alive");
+//					break;
+//				}
+//			}
+//			if (trials.getTrialList().get(i).getPrisoners().getAliveOrDeadMap().get(i).equals("waiting")) {
+//				trials.getTrialList().get(i).getPrisoners().setOnePrisoner(i, "dead");
+//			}
+//		}
+	}
+	
+	
+}

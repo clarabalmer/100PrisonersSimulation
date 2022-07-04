@@ -1,0 +1,30 @@
+
+public abstract class Strategy {
+	protected RiddleTrials trials;
+
+	//runs 
+	Strategy(RiddleScenario riddle) {
+		trials = new RiddleTrials(riddle, 1);
+	}
+	Strategy(RiddleTrials trials) {
+		this.trials = trials;
+	}
+	
+	abstract void runTrials();
+	
+	public void printResultLong() {
+		for (int i = 1; i <= trials.getNumOfTrials(); i++) {
+			System.out.println(trials.getTrialList().get(i).getPrisoners().aliveResultsLong());
+		}
+		
+	}
+	public void printResultTotals() {
+		for (int i = 1; i <= trials.getNumOfTrials(); i++) {
+			System.out.println(trials.getTrialList().get(i).getPrisoners().aliveResultsTotals());
+		}
+	}
+	
+	public RiddleTrials getTrials() {
+		return trials;
+	}
+}

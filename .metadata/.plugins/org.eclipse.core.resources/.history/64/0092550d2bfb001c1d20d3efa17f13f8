@@ -1,0 +1,24 @@
+import java.util.Map;
+
+public class RiddleTrials {
+	private Map<Integer, RiddleScenario> trialList = new TreeMap<>();
+	private int numOfTrials;
+	
+	RiddleTrials(RiddleScenario riddleScenario, int numOfTrials) {
+		this.numOfTrials = numOfTrials;
+		for (int i = 1; i <= numOfTrials; i++) {
+			trialList.put(i, riddleScenario);
+		}
+	}
+	
+	public void displayTrialResults() {
+		
+	}
+	
+	public Map<Integer, RiddleScenario> getTrialList() {
+		return trialList;
+	}
+	public int getNumOfTrials() {
+		return numOfTrials;
+	}
+}

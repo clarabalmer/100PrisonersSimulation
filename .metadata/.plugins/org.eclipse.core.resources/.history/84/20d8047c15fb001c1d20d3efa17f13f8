@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class FirstHalf extends Strategy {
+	
+	
+	//instance variables
+	private RiddleScenario riddle;
+	
+	
+	private int lastGuess; //the most recent drawer number guessed
+	private ArrayList<Integer> recordedGuesses; //array of the guesses
+	
+	//constructors
+	public FirstHalf(RiddleScenario riddle) {
+		super(riddle);
+	}
+	
+	@Override
+	public void searchDrawers() {
+		for (int i = 1; i <= riddle.getNumberOfPrisoners(); i++) {
+			for (int j = 1; j <= riddle.getMaxGuesses(); j++) {
+				if (riddle.getDrawers().getDrawerNumbers().get(j) == i) {
+					riddle.getPrisoners().setOnePrisoner(i, "alive");
+					break;
+				}
+			}
+			if (riddle.getPrisoners().getAliveOrDeadMap().get(i).equals("waiting")) {
+				riddle.getPrisoners().setOnePrisoner(i, "dead");
+			}
+		}
+	}
+	
+	public int getLastGuess() {
+		return lastGuess;
+	}
+	public void setLastGuess(int lastGuess) {
+		this.lastGuess = lastGuess;
+	}
+	public ArrayList<Integer> getAllGuesses() {
+		return recordedGuesses;
+	}
+	public void setAllGuesses(ArrayList<Integer> allGuesses) {
+		this.recordedGuesses = allGuesses;
+	}
+}

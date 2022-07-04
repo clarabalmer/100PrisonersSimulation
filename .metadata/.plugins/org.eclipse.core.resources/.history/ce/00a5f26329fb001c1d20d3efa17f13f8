@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+public class RiddleTrials {
+	private ArrayList<RiddleScenario> trialList;
+	private int numOfTrials;
+	
+	RiddleTrials(RiddleScenario riddleScenario, int numOfTrials) {
+		this.numOfTrials = numOfTrials;
+		for (int i = 1; i <= numOfTrials; i++) {
+			trialList.add(riddleScenario);
+		}
+	}
+	
+	public void displayTrialResults() {
+		
+	}
+}

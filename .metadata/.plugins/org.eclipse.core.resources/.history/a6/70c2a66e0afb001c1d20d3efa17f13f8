@@ -1,0 +1,12 @@
+
+public class RiddleScenario {
+	//fields
+	private int numberOfDrawers;
+	private int numberOfPrisoners;
+	private int numberOfGuesses;
+	private Drawers drawers;
+	private Prisoners prisoners;
+	
+	
+	
+}

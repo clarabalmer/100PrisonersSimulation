@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class FirstHalf extends Strategy {
+	
+	
+	
+	@Override
+	public void runTrials() {
+		for (int i = 1; i <= riddle.getNumberOfPrisoners(); i++) {
+			for (int j = 1; j <= riddle.getMaxGuesses(); j++) {
+				if (riddle.getDrawers().getDrawerNumbers().get(j) == i) {
+					riddle.getPrisoners().setOnePrisoner(i, "alive");
+					break;
+				}
+			}
+			if (riddle.getPrisoners().getAliveOrDeadMap().get(i).equals("waiting")) {
+				riddle.getPrisoners().setOnePrisoner(i, "dead");
+			}
+		}
+	}
+}

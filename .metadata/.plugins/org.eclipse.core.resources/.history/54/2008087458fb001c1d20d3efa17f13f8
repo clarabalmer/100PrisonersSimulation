@@ -1,0 +1,17 @@
+
+public class NumberFollow extends Strategy {
+
+	NumberFollow(RiddleScenario riddle) {
+		super(riddle);
+	}
+	NumberFollow(RiddleTrials trials) {
+		super(trials);
+	}
+
+	@Override
+	void runTrials() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

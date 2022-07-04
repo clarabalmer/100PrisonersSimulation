@@ -1,0 +1,9 @@
+
+public abstract class Strategy {
+	private RiddleScenario riddle;
+
+	Strategy(RiddleScenario riddle) {}
+	
+	abstract void searchDrawers();
+	
+}
